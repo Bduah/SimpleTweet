@@ -33,12 +33,12 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='SimpleTweetwalkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
-One major challenge I had was creating the time stamp. I added a textView for the time stamp but it wasn't working until I figured out the error was me forgetting to call the tvTime in the viewHolder class.
+One major challenge I had was creating the time stamp. I added a textView for the time stamp but it wasn't working until I figured out the error was me forgetting to call the tvTime in the viewHolder class. Another challenge was when I was sharing my project to github. I wasn't able access to my github because my token had expired so I had to generate a new token and add it to my account in Android studio.
 
 ## Open-source libraries used
 
