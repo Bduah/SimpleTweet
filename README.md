@@ -35,13 +35,13 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='SimpleTweetwalkthrough2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-One challenge I encountered was changing the color of my tweet button to blue. This was because I was using "background" instead of "backgroungTint". I also had a little hard time creating a count for my charcters in the compose activity, but I figured out that I was calling the addTextChangedListener on etCompose outside the scope of my declared etCompose. I also noticed that using the colorString helped me a lot.
+One challenge I encountered was changing the color of my tweet button to blue. This was because I was using "background" instead of "backgroungTint". I also had a little hard time creating a count for my charcters in the compose activity, but I figured out that I was calling the addTextChangedListener on etCompose outside the scope of my declared etCompose. I also noticed that using the colorString helped me a lot. After testing my work, I realised that after going above the limit, when I delete some of the characters, the color remained red, which shouldn't be, so I had to set the color back black when my character count is less than the limit.
 
 ## Open-source libraries used
 
