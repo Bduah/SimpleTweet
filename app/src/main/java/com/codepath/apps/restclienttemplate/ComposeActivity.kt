@@ -1,6 +1,8 @@
 package com.codepath.apps.restclienttemplate
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -10,6 +12,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.codepath.apps.restclienttemplate.R.color.Red
 import com.codepath.apps.restclienttemplate.models.Tweet
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import okhttp3.Headers
@@ -34,6 +37,7 @@ class ComposeActivity : AppCompatActivity() {
             //Grab the content of the edittext(etCompose)
             val tweetContent = etCompose.text.toString()
             //1. Make sure the tweet isn't empty
+
             if (tweetContent.isEmpty()){
                 Toast.makeText(this, "Empty tweets are not allowed", Toast.LENGTH_SHORT).show()
                 //Look into displaying a Snackbar message
@@ -71,10 +75,22 @@ class ComposeActivity : AppCompatActivity() {
         }
 
         etCompose.addTextChangedListener(object : TextWatcher {
+            @SuppressLint("ResourceAsColor")
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                 // Fires right as the text is being changed (even supplies the range of text)
                 val character = 280 - etCompose.length()
-                tvCharCount.setText(character.toString())
+
+                if(character > 0){
+                    tvCharCount.setText(character.toString())
+                    tvCharCount.setTextColor(Color.parseColor("#000000"))
+                }
+                else{
+                    Log.i("here", "CharacterCount is less than 0")
+                    tvCharCount.setText("above limit")
+                    tvCharCount.setTextColor(Color.parseColor("#FF0000"))
+
+
+                }
             }
 
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
